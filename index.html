@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enter Sigorta - Sigortacılık yeniden yazılıyor. Trafik, kasko, ev, sağlık ve işyeri sigortası çözümleri ile her zaman yanınızdayız.">
+    <title>Enter Sigorta — Sigortacılık Yeniden Yazılıyor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="15" stroke="#e74c3c" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="85" stroke-dashoffset="12"/>
+                        <line x1="18" y1="18" x2="33" y2="18" stroke="#e74c3c" stroke-width="3.5" stroke-linecap="round"/>
+                        <line x1="8" y1="18" x2="26" y2="18" stroke="#e74c3c" stroke-width="3.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="logo-text"><span class="logo-e-hidden">e</span>nter <span class="logo-accent">sigorta</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link active">Ana Sayfa</a></li>
+                <li><a href="#hizmetler" class="nav-link">Hizmetler</a></li>
+                <li><a href="#neden-biz" class="nav-link">Neden Biz</a></li>
+                <li><a href="#surec" class="nav-link">Süreç</a></li>
+                <li><a href="#sss" class="nav-link">SSS</a></li>
+                <li><a href="#iletisim" class="nav-link">İletişim</a></li>
+            </ul>
+            <a href="#iletisim" class="nav-cta">Teklif Alın</a>
+            <button class="hamburger" id="hamburger" aria-label="Menüyü aç">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+        </div>
+        <div class="hero-content reveal">
+            <span class="hero-badge">🛡️ Güvenilir Sigorta Partneri</span>
+            <h1>Sigortacılık<br><span class="gradient-text">Yeniden Yazılıyor</span></h1>
+            <p class="hero-subtitle">İhtiyaçlarınıza yönelik sigorta çözümleri sunan Enter Sigorta; trafik, kasko, ev sigortası ve sağlık sigortasına kadar uzanan geniş ürün yelpazesiyle her anınızda yanınızda.</p>
+            <div class="hero-actions">
+                <a href="#iletisim" class="btn btn-primary">
+                    <span>Teklif Alın</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#hizmetler" class="btn btn-secondary">Hizmetlerimiz</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1500">0</span>+
+                    <span class="stat-label">Mutlu Müşteri</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10">0</span>+
+                    <span class="stat-label">Yıllık Deneyim</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span>+
+                    <span class="stat-label">Sigorta Şirketi</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HİZMETLER ========== -->
+    <section class="services" id="hizmetler">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Sigorta Ürünleri</span>
+                <h2>Hizmetlerimiz</h2>
+                <p>Tüm sigorta ihtiyaçlarınız için kapsamlı çözümler sunuyoruz. Her bir sigorta türü, sizin için özenle hazırlandı.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal" style="--delay: 0.1s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 28c0-4 3-8 8-8s8 4 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="24" cy="16" r="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M32 12l4-4M12 32l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Araç Sigortaları</h3>
+                    <p>Kasko ve trafik sigortası ile aracınızı her türlü riske karşı koruma altına alın. En uygun fiyat garantisi.</p>
+                    <a href="#iletisim" class="service-link">Detaylı Bilgi →</a>
+                </div>
+                <div class="service-card reveal" style="--delay: 0.2s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 38V18L24 8l16 10v20H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <rect x="18" y="26" width="12" height="12" stroke="currentColor" stroke-width="2"/>
+                            <path d="M24 26v12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Ev Sigortaları</h3>
+                    <p>Evinizi ve eşyalarınızı deprem, yangın, hırsızlık gibi risklere karşı güvence altına alın.</p>
+                    <a href="#iletisim" class="service-link">Detaylı Bilgi →</a>
+                </div>
+                <div class="service-card reveal" style="--delay: 0.3s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="12" width="36" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M6 20h36" stroke="currentColor" stroke-width="2"/>
+                            <path d="M18 12V8M30 12V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>İşyeri Sigortaları</h3>
+                    <p>İşyerinizi ve ticari faaliyetlerinizi kapsamlı teminatlarla koruyun. İşletmeniz güvende.</p>
+                    <a href="#iletisim" class="service-link">Detaylı Bilgi →</a>
+                </div>
+                <div class="service-card reveal" style="--delay: 0.4s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 42s16-8 16-20V12L24 6 8 12v10c0 12 16 20 16 20z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M16 24l5 5 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Sağlık Sigortaları</h3>
+                    <p>Özel sağlık ve tamamlayıcı sağlık sigortası ile SGK fark ücreti ödemeden tedavi olun.</p>
+                    <a href="#iletisim" class="service-link">Detaylı Bilgi →</a>
+                </div>
+                <div class="service-card reveal" style="--delay: 0.5s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="18" cy="16" r="6" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="32" cy="18" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M6 38c0-6 5-10 12-10 3 0 5.5.8 7.5 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M26 36c0-4 3-7 6-7s6 3 6 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Aile Sigortaları</h3>
+                    <p>Bireysel emeklilik ve ferdi kaza sigortası ile ailenizin geleceğini güvence altına alın.</p>
+                    <a href="#iletisim" class="service-link">Detaylı Bilgi →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NEDEN BİZ ========== -->
+    <section class="why-us" id="neden-biz">
+        <div class="container">
+            <div class="why-us-layout">
+                <div class="why-us-left reveal">
+                    <span class="big-number">3</span>
+                    <h2>Enter Sigorta'yı <br>Tercih Etmeniz İçin <br><span class="gradient-text">3 Neden</span></h2>
+                </div>
+                <div class="why-us-right">
+                    <div class="why-card reveal" style="--delay: 0.1s">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <h3>Her &amp; Her Zaman Sizinle</h3>
+                            <p>Trafik, kasko, ev sigortası ve sağlık sigortasına kadar uzanan yelpazedeki sigorta çeşidini sizlerle buluşturuyoruz. Yenileme ve hasar süreçlerinde her anınızda sizinleyiz.</p>
+                        </div>
+                    </div>
+                    <div class="why-card reveal" style="--delay: 0.2s">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M6 28c0-5 4-9 10-9s10 4 10 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <div>
+                            <h3>Sizin Sigorta Acenteniz</h3>
+                            <p>İhtiyaçlarınızı anlar ve kişiselleştirilmiş çözümler sunarız. Türkiye'nin önde gelen sigorta şirketleri arasından en uygun seçenekleri karşılaştırmalı olarak size sunarız.</p>
+                        </div>
+                    </div>
+                    <div class="why-card reveal" style="--delay: 0.3s">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 32 32" fill="none"><path d="M8 16h16M16 8v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="4" y="4" width="24" height="24" rx="6" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </div>
+                        <div>
+                            <h3>Çalışma Ortağımız Olun</h3>
+                            <p>Sigorta sektöründe yer almak istiyorsanız doğru bir yerden başlangıç yapın. Acenteliğimizde şubemiz olarak sektörde yerinizi alın.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SÜREÇ ========== -->
+    <section class="process" id="surec">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Nasıl Çalışır?</span>
+                <h2>Hizmet Sürecimiz</h2>
+                <p>Sadece sigortacılık yapmıyoruz. Her anınızda, her zaman yanınızda olmak istiyoruz. Risklerinizi beraber teminat altına alalım.</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step reveal" style="--delay: 0.1s">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h4>İhtiyaç Analizi</h4>
+                        <p>İhtiyaçlarınızı detaylı şekilde belirleyelim</p>
+                    </div>
+                </div>
+                <div class="process-step reveal" style="--delay: 0.15s">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h4>Fiyat Araştırması</h4>
+                        <p>Tüm sigorta şirketlerinin fiyatlarını araştıralım</p>
+                    </div>
+                </div>
+                <div class="process-step reveal" style="--delay: 0.2s">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h4>Karşılaştırma</h4>
+                        <p>Karşılaştırmalı fiyat ve teminat tablosu çıkaralım</p>
+                    </div>
+                </div>
+                <div class="process-step reveal" style="--delay: 0.25s">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h4>En Uygun Fiyat</h4>
+                        <p>Size en uygun fiyat ve teminatı bulalım</p>
+                    </div>
+                </div>
+                <div class="process-step reveal" style="--delay: 0.3s">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h4>Teminat Altına Alma</h4>
+                        <p>Riskinizi hızlıca teminat altına alalım</p>
+                    </div>
+                </div>
+                <div class="process-step reveal" style="--delay: 0.35s">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <h4>Hasar Desteği</h4>
+                        <p>Hasar anında kesintisiz yanınızdayız</p>
+                    </div>
+                </div>
+                <div class="process-step reveal" style="--delay: 0.4s">
+                    <div class="step-number">07</div>
+                    <div class="step-content">
+                        <h4>Yenileme &amp; Takip</h4>
+                        <p>Poliçe yenileme süreçlerinde sizinleyiz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SSS ========== -->
+    <section class="faq" id="sss">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Merak Edilenler</span>
+                <h2>Sıkça Sorulan Sorular</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal" style="--delay: 0.1s">
+                    <button class="faq-question" id="faq-btn-1">
+                        <span>Zorunlu Trafik Sigortası Nedir?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Zorunlu Trafik Sigortası, 2918 sayılı Karayolları Trafik Kanununda düzenlenen ve trafiğe çıkan her aracın yaptırmak zorunda olduğu bir sigorta çeşididir. Her yıl yenilenmek zorundadır. Hasar anında karşı tarafa verilebilecek zararları karşılamak amacıyla yapılır.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="--delay: 0.15s">
+                    <button class="faq-question" id="faq-btn-2">
+                        <span>Kasko Nedir?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kasko mal sigortalarının türlerinden biridir. Herhangi bir motorlu kara taşıtının sigortalının iradesi dışında hasara uğraması, yanması, çalınması gibi durumlarda sigortalıya tazminat ödenmesini sağlamak için yapılır. Kasko karşı araçtaki hasarı değil, kendi aracınızdaki hasarı karşılar.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="--delay: 0.2s">
+                    <button class="faq-question" id="faq-btn-3">
+                        <span>Trafik Sigortası ve Kasko Arasındaki Fark Nedir?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Trafik sigortası karşı tarafa verilen zararları karşılarken, kasko kendi aracınızdaki hasarları teminat altına alır. İkisi birbirini tamamlayan farklı sigorta türleridir. Kapsamlı koruma için her ikisinin de yaptırılması önerilir.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="--delay: 0.25s">
+                    <button class="faq-question" id="faq-btn-4">
+                        <span>Tamamlayıcı Sağlık Sigortası Nedir?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>SGK tarafından kapsama alınmayan veya kısmen karşılanan sağlık giderlerini teminat altına alan sigorta türüdür. SGK fark ücreti ödemeden, daha geniş hastane ağından yararlanmanızı sağlar.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="--delay: 0.3s">
+                    <button class="faq-question" id="faq-btn-5">
+                        <span>Özel Sağlık Sigortası Nedir?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Beklenmedik kaza veya hastalık sonucu oluşacak sağlık giderlerinin yanı sıra, her türlü tanı ve tedavi işlemlerinin en seçkin sağlık kurumlarında, en modern yöntemlerle ve mali kaygı duymadan karşılanması için hazırlanan kapsamlı sigorta çözümüdür.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="--delay: 0.35s">
+                    <button class="faq-question" id="faq-btn-6">
+                        <span>Neden Trafik Sigortası Yaptırmalıyız?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kaza oranının gün geçtikçe arttığı ülkemizde, Karayolları Trafik Kanunu'nca herkesin zorunlu trafik sigortası yaptırması gerekmektedir. Bu sigorta, olası kazalarda hem sizi hem de karşı tarafı mali açıdan koruma altına alır.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PARTNER LOGOLARI ========== -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Çözüm Ortaklarımız</span>
+                <h2>Anlaşmalı Sigorta Şirketleri</h2>
+            </div>
+            <div class="partners-marquee">
+                <div class="marquee-track">
+                    <div class="partner-logo">HDI Sigorta</div>
+                    <div class="partner-logo">Mapfre Sigorta</div>
+                    <div class="partner-logo">Neova Sigorta</div>
+                    <div class="partner-logo">Quick Sigorta</div>
+                    <div class="partner-logo">Türk Nippon</div>
+                    <div class="partner-logo">Axa Sigorta</div>
+                    <div class="partner-logo">Allianz</div>
+                    <div class="partner-logo">Sompo Japan</div>
+                    <div class="partner-logo">HDI Sigorta</div>
+                    <div class="partner-logo">Mapfre Sigorta</div>
+                    <div class="partner-logo">Neova Sigorta</div>
+                    <div class="partner-logo">Quick Sigorta</div>
+                    <div class="partner-logo">Türk Nippon</div>
+                    <div class="partner-logo">Axa Sigorta</div>
+                    <div class="partner-logo">Allianz</div>
+                    <div class="partner-logo">Sompo Japan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== İLETİŞİM ========== -->
+    <section class="contact" id="iletisim">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">İletişim</span>
+                <h2>Bizimle İletişime Geçin</h2>
+                <p>Çalışma ortağımız olmak veya sigorta teklifi almak için formu doldurun. En kısa sürede sizinle iletişime geçelim.</p>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-info reveal" style="--delay: 0.1s">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <h4>Adres</h4>
+                            <p>Çankaya Mah. Cinnah Cad. 75/8<br>Çankaya / ANKARA</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Telefon</h4>
+                            <p>0 (312) 426 01 10</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <h4>E-posta</h4>
+                            <p>info@entersigorta.com</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                            <h4>Çalışma Saatleri</h4>
+                            <p>Pzt-Cum: 08:00 - 18:00<br>Cumartesi: 09:00 - 16:00</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form reveal" id="contactForm" style="--delay: 0.2s">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Ad Soyad</label>
+                            <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="05XX XXX XX XX" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-posta</label>
+                        <input type="email" id="email" name="email" placeholder="ornek@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Konu</label>
+                        <select id="subject" name="subject">
+                            <option value="">Konu Seçiniz</option>
+                            <option value="teklif">Sigorta Teklifi</option>
+                            <option value="ortaklik">Şube Ortaklığı</option>
+                            <option value="hasar">Hasar Bildirimi</option>
+                            <option value="diger">Diğer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mesaj</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Mesajınızı yazınız..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                        <span>Gönder</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#hero" class="footer-logo">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="18" cy="18" r="15" stroke="#e74c3c" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="85" stroke-dashoffset="12"/>
+                                <line x1="18" y1="18" x2="33" y2="18" stroke="#e74c3c" stroke-width="3.5" stroke-linecap="round"/>
+                                <line x1="8" y1="18" x2="26" y2="18" stroke="#e74c3c" stroke-width="3.5" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <span class="logo-text"><span class="logo-e-hidden">e</span>nter <span class="logo-accent">sigorta</span></span>
+                    </a>
+                    <p class="footer-desc">Uzman kadromuzla 7/24 kesintisiz hizmet vererek, portföyünüzü büyütmeniz için yanınızdayız.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="#hizmetler">Hizmetler</a></li>
+                        <li><a href="#neden-biz">Neden Biz</a></li>
+                        <li><a href="#sss">SSS</a></li>
+                        <li><a href="#iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ürünlerimiz</h4>
+                    <ul>
+                        <li><a href="#hizmetler">Araç Sigortaları</a></li>
+                        <li><a href="#hizmetler">Ev Sigortaları</a></li>
+                        <li><a href="#hizmetler">Sağlık Sigortaları</a></li>
+                        <li><a href="#hizmetler">İşyeri Sigortaları</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>İletişim</h4>
+                    <p>Çankaya Mah. Cinnah Cad. 75/8<br>Çankaya / ANKARA</p>
+                    <p>0 (312) 426 01 10</p>
+                    <p>info@entersigorta.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Enter Sigorta. Tüm hakları saklıdır.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
