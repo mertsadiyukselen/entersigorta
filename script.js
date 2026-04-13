@@ -201,4 +201,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
+    // ============================
+    //  PRELOADER
+    // ============================
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500); // Wait for CSS opacity transition
+            }, 800); // Minimum 800ms display for premium feel
+        }
+    });
+
+    // ============================
+    //  COOKIE BANNER (KVKK)
+    // ============================
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptCookiesBtn = document.getElementById('acceptCookies');
+    
+    if (cookieBanner && acceptCookiesBtn) {
+        if (!localStorage.getItem('entersigorta_cookies_accepted')) {
+            setTimeout(() => {
+                cookieBanner.classList.add('show');
+            }, 2000); // Show 2 seconds after load
+        }
+        
+        acceptCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('entersigorta_cookies_accepted', 'true');
+            cookieBanner.classList.remove('show');
+        });
+    }
+
 });
