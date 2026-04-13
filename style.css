@@ -246,14 +246,28 @@ img { max-width: 100%; display: block; }
     max-height: 38px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1); /* Ensure visibility on dark background */
 }
 
 .brand-logo-footer {
     max-height: 48px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+}
+
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    padding: 6px 14px;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 4px 15px rgba(218, 41, 28, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(218, 41, 28, 0.25);
 }
 
 .logo-text {
@@ -1012,10 +1026,11 @@ img { max-width: 100%; display: block; }
 }
 
 .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
+    display: inline-flex;
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: var(--radius-xl);
+    margin-bottom: 20px;
 }
 
 .footer-desc {
@@ -1132,7 +1147,10 @@ img { max-width: 100%; display: block; }
     width: auto;
     min-width: 200px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    background: #ffffff;
+    padding: 15px 30px;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 30px rgba(218, 41, 28, 0.2);
     animation: pulsePreloader 1s infinite alternate;
 }
 .preloader-spinner {
