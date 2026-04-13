@@ -14,12 +14,12 @@
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
 
-    --accent-red: #e74c3c;
-    --accent-orange: #f39c12;
+    --accent-red: #DA291C; /* Matching logo red */
+    --accent-orange: #FF5A36;
     --accent-blue: #3b82f6;
     --accent-purple: #8b5cf6;
-    --gradient-primary: linear-gradient(135deg, #e74c3c, #f39c12);
-    --gradient-hero: linear-gradient(135deg, #0a0e1a 0%, #1a1040 40%, #0f172a 100%);
+    --gradient-primary: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+    --gradient-hero: linear-gradient(135deg, #0a0e1a 0%, #1a0808 50%, #0a0e1a 100%);
     --gradient-blue: linear-gradient(135deg, #3b82f6, #8b5cf6);
 
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -164,12 +164,29 @@ img { max-width: 100%; display: block; }
 .btn-primary {
     background: var(--gradient-primary);
     color: #fff;
-    box-shadow: 0 4px 20px rgba(231, 76, 60, 0.3);
+    box-shadow: 0 4px 20px rgba(218, 41, 28, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: var(--radius-xl);
+    background: var(--gradient-primary);
+    filter: blur(8px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(231, 76, 60, 0.45);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn-primary:hover::after {
+    opacity: 0.8;
 }
 
 .btn-secondary {
@@ -225,6 +242,20 @@ img { max-width: 100%; display: block; }
 
 .logo-icon svg { width: 36px; height: 36px; }
 
+.brand-logo {
+    max-height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Ensure visibility on dark background */
+}
+
+.brand-logo-footer {
+    max-height: 48px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
 .logo-text {
     font-size: 1.25rem;
     font-weight: 700;
@@ -271,11 +302,17 @@ img { max-width: 100%; display: block; }
     font-weight: 600;
     color: #fff;
     transition: var(--transition);
+    animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(218, 41, 28, 0.4); }
+    100% { box-shadow: 0 0 15px 5px rgba(218, 41, 28, 0.1); }
 }
 
 .nav-cta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+    transform: translateY(-1px) scale(1.05);
+    animation-play-state: paused;
 }
 
 /* Hamburger */
@@ -485,7 +522,7 @@ img { max-width: 100%; display: block; }
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px) rotateX(2deg) rotateY(2deg);
     border-color: var(--border-glass-hover);
     background: var(--bg-glass-hover);
     box-shadow: var(--shadow-glass), var(--shadow-glow);
@@ -509,6 +546,8 @@ img { max-width: 100%; display: block; }
 .service-card:hover .service-icon {
     background: var(--gradient-primary);
     color: #fff;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 20px rgba(218, 41, 28, 0.3);
 }
 
 .service-icon svg { width: 28px; height: 28px; }
