@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     preloader.style.display = 'none';
                 }, 500); // Wait for CSS opacity transition
-            }, 800); // Minimum 800ms display for premium feel
+            }, 1800); // Minimum 1.8s display for premium feel
         }
     });
 

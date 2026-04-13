@@ -1128,9 +1128,12 @@ img { max-width: 100%; display: block; }
     gap: 20px;
 }
 .preloader-logo {
-    max-height: 50px;
+    height: 80px;
+    width: auto;
+    min-width: 200px;
+    object-fit: contain;
     filter: brightness(0) invert(1);
-    animation: pulsePreloader 1.5s infinite alternate;
+    animation: pulsePreloader 1s infinite alternate;
 }
 .preloader-spinner {
     width: 40px; height: 40px;
