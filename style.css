@@ -1358,6 +1358,114 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================
+   TALİ ACENTE OLUN 
+   ============================ */
+.partner-section {
+    padding: var(--section-padding);
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.partner-content h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.partner-content p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.partner-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.partner-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.partner-features li svg {
+    width: 24px;
+    height: 24px;
+}
+
+.partner-graphics {
+    position: relative;
+    height: 400px;
+    background: radial-gradient(circle at center, rgba(37, 211, 102, 0.1) 0%, transparent 60%);
+    border-radius: 50%;
+}
+
+.partner-glass-card {
+    position: absolute;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: floatAnimation 4s ease-in-out infinite;
+    max-width: 260px;
+}
+
+.partner-glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.partner-glass-card.pc-1 {
+    top: 15%;
+    left: 0;
+    animation-delay: 0s;
+}
+
+.partner-glass-card.pc-2 {
+    bottom: 20%;
+    right: 0;
+    animation-delay: 2s;
+}
+
+.pc-icon {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: var(--radius-md);
+}
+
+.partner-glass-card h4 {
+    margin-bottom: 4px;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.partner-glass-card p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ============================
    CTA BANNER
    ============================ */
 .cta-banner {
@@ -1394,6 +1502,17 @@ img { max-width: 100%; display: block; }
    RESPONSIVE
    ============================ */
 @media (max-width: 968px) {
+    .partner-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .partner-graphics {
+        height: 300px;
+    }
+    
+    .partner-glass-card.pc-1 { top: 10%; left: 5%; }
+    .partner-glass-card.pc-2 { bottom: 10%; right: 5%; }
+    
     :root { --section-padding: 80px 0; }
 
     .nav-links {
