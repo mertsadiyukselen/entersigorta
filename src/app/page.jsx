@@ -575,7 +575,7 @@ export default function Home() {
             <div style={{ textAlign: 'center', width: '100%' }}>
               <p>&copy; 2026 Enter Sigorta. Tüm hakları saklıdır.</p>
               <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '8px', lineHeight: 1.6 }}>
-                Win Grup Sigorta Ve Reasürans Brokerliği A.Ş. &mdash; 5N1K Sigorta Aracılık Hizmetleri LTD.ŞTİ.
+                5N1K Sigorta Aracılık Hizmetleri LTD.ŞTİ.
               </p>
             </div>
             <div className="social-links" style={{ justifyContent: 'center', width: '100%', marginTop: '12px' }}>
