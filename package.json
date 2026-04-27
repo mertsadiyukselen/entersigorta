@@ -1,0 +1,37 @@
+{
+  "name": "teksayfaornek",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mertsadiyukselen/entersigorta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mertsadiyukselen/entersigorta/issues"
+  },
+  "homepage": "https://github.com/mertsadiyukselen/entersigorta#readme",
+  "dependencies": {
+    "@prisma/client": "^5.12.1",
+    "bcrypt": "^5.1.1",
+    "next": "^14.2.2",
+    "next-auth": "^4.24.7",
+    "nodemailer": "^6.9.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.2",
+    "prisma": "^5.12.1"
+  }
+}
