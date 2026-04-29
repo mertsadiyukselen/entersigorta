@@ -191,6 +191,9 @@ export default async function AdminLayout({ children }) {
           <Link href="/admin/jobs" className="admin-nav-link">
             💼 <span>İlan Yönetimi</span>
           </Link>
+          <Link href="/admin/banners" className="admin-nav-link">
+            🖼️ <span>Banner Slider</span>
+          </Link>
 
           <div className="admin-nav-section">Sistem</div>
           <Link href="/admin/settings" className="admin-nav-link">

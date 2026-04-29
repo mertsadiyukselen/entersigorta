@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import HeroSlider from './components/HeroSlider';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -216,16 +217,20 @@ export default function Home() {
           <div className="hero-orb hero-orb-3"></div>
         </div>
         <div className="hero-content reveal">
-          <span className="hero-badge">Türkiye'nin En Büyük Acentesiyle</span>
-          <h1>Sigortacılığa Başlamanın<br/><span className="gradient-text">Tam Zamanı</span></h1>
-          <p className="hero-subtitle">Şube başvurusu, teklif alma ve ürünlerde avantajlı fiyatlarla hızlı çözümler. Her zaman yanınızdayız.</p>
-          <div className="hero-actions">
-            <a href="#sube-basvurusu" className="btn btn-primary btn-lg">
-              <span>Hemen Başvurun</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#teklif" className="btn btn-secondary">Teklif Alın</a>
-          </div>
+          <HeroSlider
+            fallbackSlide={{
+              title: 'Sigortacılığa Başlamanın Tam Zamanı',
+              subtitle: "Türkiye'nin En Büyük Acentesiyle",
+              description:
+                'Şube başvurusu, teklif alma ve ürünlerde avantajlı fiyatlarla hızlı çözümler. Her zaman yanınızdayız.',
+              imageUrl: '/enter_sigorta.png',
+              primaryCtaText: 'Hemen Başvurun',
+              primaryCtaHref: '/sigorta-sube-basvurusu',
+              secondaryCtaText: 'Teklif Alın',
+              secondaryCtaHref: '/sigorta-teklif-al',
+              isActive: true,
+            }}
+          />
           <div className="hero-quickcards">
             <a className="quickcard" href="#sube-basvurusu">
               <div className="quickcard-icon">🏢</div>
