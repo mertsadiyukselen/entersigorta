@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import SiteHeader from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter';
 
 export default function SubeBasvurusuPage() {
   const [formData, setFormData] = useState({
@@ -79,43 +81,7 @@ export default function SubeBasvurusuPage() {
 
   return (
     <>
-      <nav className="navbar scrolled" style={{ top: 0 }}>
-        <div className="nav-container">
-          <Link href="/" className="nav-logo">
-            <img src="/enter_sigorta.png" alt="Logo" className="brand-logo" />
-          </Link>
-          <ul className="nav-links">
-            <li>
-              <Link href="/" className="nav-link">
-                Ana Sayfa
-              </Link>
-            </li>
-            <li>
-              <Link href="/sigorta-sube-basvurusu" className="nav-link active">
-                Şube Başvurusu
-              </Link>
-            </li>
-            <li>
-              <Link href="/sigorta-teklif-al" className="nav-link">
-                Teklif Al
-              </Link>
-            </li>
-            <li>
-              <Link href="/sigorta-urunleri" className="nav-link">
-                Ürünler
-              </Link>
-            </li>
-            <li>
-              <Link href="/iletisim" className="nav-link">
-                İletişim
-              </Link>
-            </li>
-          </ul>
-          <a href={`https://wa.me/${whatsappNumber}`} target="_blank" className="nav-cta">
-            WhatsApp
-          </a>
-        </div>
-      </nav>
+      <SiteHeader activeKey="sube" />
 
       <section className="kariyer-hero" style={{ paddingTop: 140 }}>
         <span className="hero-badge" style={{ position: 'relative' }}>
@@ -301,6 +267,8 @@ export default function SubeBasvurusuPage() {
           </div>
         </div>
       </section>
+
+      <SiteFooter />
     </>
   );
 }

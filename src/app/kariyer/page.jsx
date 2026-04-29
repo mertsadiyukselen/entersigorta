@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import SiteHeader from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter';
 
 const typeLabels = {
   'tam-zamanli': 'Tam Zamanlı',
@@ -40,22 +42,7 @@ export default function KariyerPage() {
 
   return (
     <>
-      <nav className="navbar scrolled" style={{ top: 0 }}>
-        <div className="nav-container">
-          <Link href="/" className="nav-logo">
-            <img src="/enter_sigorta.png" alt="Enter Sigorta Logo" className="brand-logo" />
-          </Link>
-          <ul className="nav-links">
-            <li><Link href="/" className="nav-link">Ana Sayfa</Link></li>
-            <li><Link href="/sigorta-sube-basvurusu" className="nav-link">Şube Başvurusu</Link></li>
-            <li><Link href="/sigorta-teklif-al" className="nav-link">Teklif Al</Link></li>
-            <li><Link href="/sigorta-urunleri" className="nav-link">Ürünler</Link></li>
-            <li><Link href="/kariyer" className="nav-link active">Kariyer</Link></li>
-            <li><Link href="/iletisim" className="nav-link">İletişim</Link></li>
-          </ul>
-          <Link href="/sigorta-teklif-al" className="nav-cta">Hemen Teklif</Link>
-        </div>
-      </nav>
+      <SiteHeader activeKey="kariyer" />
 
       <section className="kariyer-hero">
         <span className="hero-badge" style={{ position: 'relative' }}>👔 Kariyer Fırsatları</span>
@@ -134,13 +121,7 @@ export default function KariyerPage() {
         </div>
       )}
 
-      <footer className="footer" style={{ marginTop: 0 }}>
-        <div className="container">
-          <div className="footer-bottom" style={{ paddingTop: '20px' }}>
-            <p>&copy; 2026 Enter Sigorta. Tüm hakları saklıdır.</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

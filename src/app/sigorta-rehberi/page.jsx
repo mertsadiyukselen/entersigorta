@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import SiteHeader from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter';
 
 const guides = [
   {
@@ -50,43 +52,7 @@ function AccordionItem({ title, body, defaultOpen = false }) {
 export default function SigortaRehberiPage() {
   return (
     <>
-      <nav className="navbar scrolled" style={{ top: 0 }}>
-        <div className="nav-container">
-          <Link href="/" className="nav-logo">
-            <img src="/enter_sigorta.png" alt="Logo" className="brand-logo" />
-          </Link>
-          <ul className="nav-links">
-            <li>
-              <Link href="/" className="nav-link">
-                Ana Sayfa
-              </Link>
-            </li>
-            <li>
-              <Link href="/sigorta-urunleri" className="nav-link">
-                Ürünler
-              </Link>
-            </li>
-            <li>
-              <Link href="/sigorta-teklif-al" className="nav-link">
-                Teklif Al
-              </Link>
-            </li>
-            <li>
-              <Link href="/sigorta-rehberi" className="nav-link active">
-                Rehber
-              </Link>
-            </li>
-            <li>
-              <Link href="/iletisim" className="nav-link">
-                İletişim
-              </Link>
-            </li>
-          </ul>
-          <Link href="/sigorta-teklif-al" className="nav-cta">
-            Hemen Teklif
-          </Link>
-        </div>
-      </nav>
+      <SiteHeader activeKey="rehber" />
 
       <section className="kariyer-hero" style={{ paddingTop: 140 }}>
         <span className="hero-badge" style={{ position: 'relative' }}>
@@ -122,6 +88,8 @@ export default function SigortaRehberiPage() {
           </div>
         </div>
       </section>
+
+      <SiteFooter />
     </>
   );
 }
