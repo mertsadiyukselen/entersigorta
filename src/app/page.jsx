@@ -316,7 +316,10 @@ export default function Home() {
               'Koru', 'Doğa', 'Güneş', 'Eureko', 'Dubai Starr',
             ].map((name, i) => (
               <div className="partner-logo reveal" style={{ '--delay': `${0.04 * (i % 8)}s` }} key={i}>
-                {name}
+                <div className="partner-mark" aria-hidden="true">
+                  {name.trim().slice(0, 2).toUpperCase()}
+                </div>
+                <span className="partner-name">{name}</span>
               </div>
             ))}
           </div>
