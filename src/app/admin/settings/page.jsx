@@ -174,17 +174,17 @@ export default async function SettingsPage() {
             </div>
             <div className="form-field">
               <label>Sayfa Başlığı (Title Tag)</label>
-              <input type="text" name="seo_title" defaultValue={settings.seo_title || ''} placeholder="Enter Sigorta — Resmi Şube Başvurusu" />
+              <input type="text" name="seo_title" defaultValue={settings.seo_title || ''} placeholder="Enter Sigorta — Sigorta Şubesi Olmak İçin Başvur" />
               <div className="hint">Google arama sonuçlarında görünecek başlık (50-60 karakter ideal)</div>
             </div>
             <div className="form-field">
               <label>Sayfa Açıklaması (Meta Description)</label>
-              <textarea name="seo_description" defaultValue={settings.seo_description || ''} placeholder="Enter Sigorta resmi şubesi olarak kendi işinizi kurun. 30+ sigorta şirketi ağıyla..."></textarea>
+              <textarea name="seo_description" defaultValue={settings.seo_description || ''} placeholder="Sigorta şubesi olmak için başvurun. 30+ sigorta şirketi ağıyla karşılaştırmalı teklif, hızlı destek ve kurulum sürecinde yanınızdayız."></textarea>
               <div className="hint">Arama sonuçlarında başlığın altında görünür (150-160 karakter ideal)</div>
             </div>
             <div className="form-field">
               <label>Anahtar Kelimeler (Keywords)</label>
-              <input type="text" name="seo_keywords" defaultValue={settings.seo_keywords || ''} placeholder="sigorta şube başvurusu, resmi şube, sigorta acentesi" />
+              <input type="text" name="seo_keywords" defaultValue={settings.seo_keywords || ''} placeholder="sigorta şubesi başvurusu, sigorta şubesi, sigorta acentesi" />
               <div className="hint">Virgülle ayırın</div>
             </div>
           </div>

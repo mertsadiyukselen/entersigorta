@@ -208,7 +208,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* HERO - Resmi Şube Başvurusu Odaklı */}
+      {/* HERO - Sigorta Şubesi Başvurusu Odaklı */}
       <section className="hero" id="hero">
         <div className="hero-bg">
           <div className="hero-orb hero-orb-1"></div>
@@ -291,12 +291,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========== RESMİ ŞUBE BAŞVURUSU - ANA BÖLÜM ========== */}
+      {/* SİGORTA ŞİRKETLERİMİZ */}
+      <section className="partners" id="sirketlerimiz">
+        <div className="container">
+          <div className="section-header reveal">
+            <span className="section-tag">Sigorta Şirketlerimiz</span>
+            <h2>Geniş İş Ortağı Ağı</h2>
+            <p>Farklı şirketlerin ürünlerini karşılaştırmalı şekilde sunarak ihtiyacınıza en uygun poliçeyi seçmenizi kolaylaştırıyoruz.</p>
+          </div>
+        </div>
+        <div className="partners-marquee">
+          <div className="marquee-track">
+            {[
+              'Allianz', 'Axa', 'Anadolu', 'HDI', 'Mapfre', 'Sompo', 'Neova', 'Quick',
+              'Türkiye Sigorta', 'Ray', 'Bereket', 'Zurich', 'Groupama', 'Türk Nippon', 'Hepiyi',
+              'Koru', 'Doğa', 'Güneş', 'Eureko', 'Dubai Starr',
+              'Allianz', 'Axa', 'Anadolu', 'HDI', 'Mapfre', 'Sompo', 'Neova', 'Quick',
+              'Türkiye Sigorta', 'Ray', 'Bereket', 'Zurich', 'Groupama', 'Türk Nippon', 'Hepiyi',
+              'Koru', 'Doğa', 'Güneş', 'Eureko', 'Dubai Starr',
+            ].map((name, i) => (
+              <div className="partner-logo reveal" style={{ '--delay': `${0.04 * (i % 8)}s` }} key={i}>
+                {name}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== SİGORTA ŞUBESİ BAŞVURUSU - ANA BÖLÜM ========== */}
       <section className="partner-section" id="sube-basvurusu">
         <div className="container">
           <div className="section-header reveal">
             <span className="section-tag">Kurumsal İş Ortaklığı</span>
-            <h2>Resmi Şubemiz Olun,<br/><span className="gradient-text">Birlikte Büyüyelim 🚀</span></h2>
+            <h2>Sigorta Şubesi Olmak İçin<br/><span className="gradient-text">Başvurun</span></h2>
             <p>Güçlü kurumsal altyapımız, geniş sigorta şirketi entegrasyonumuz ve anında destek ekibimizle işletmenizi bir adım ileriye taşıyın.</p>
           </div>
           <div className="partner-grid">
@@ -328,7 +355,7 @@ export default function Home() {
 
             {/* BAŞVURU FORMU */}
             <form className="contact-form reveal" onSubmit={handleSubmit} style={{ '--delay': '0.2s' }}>
-              <h3 style={{ fontSize: '1.4rem', marginBottom: '6px', textAlign: 'center', color: '#fff' }}>📋 Resmi Şube Başvuru Formu</h3>
+              <h3 style={{ fontSize: '1.4rem', marginBottom: '6px', textAlign: 'center', color: '#fff' }}>📋 Sigorta Şubesi Başvuru Formu</h3>
               <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '24px' }}>Aşağıdaki bilgileri eksiksiz doldurarak başvurunuzu tamamlayın.</p>
               
               {/* Kişisel Bilgiler */}
@@ -506,8 +533,8 @@ export default function Home() {
                   <svg viewBox="0 0 32 32" fill="none"><path d="M8 16h16M16 8v16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><rect x="4" y="4" width="24" height="24" rx="6" stroke="currentColor" strokeWidth="1.5"/></svg>
                 </div>
                 <div>
-                  <h3>Resmi Şube Fırsatı</h3>
-                  <p>Sigorta sektöründe kendi işinizi kurmak istiyorsanız, resmi şubemiz olarak ailemize katılın.</p>
+                  <h3>Sigorta Şubesi Fırsatı</h3>
+                  <p>Sigorta sektöründe kendi işinizi kurmak istiyorsanız, sigorta şubemiz olarak ailemize katılın.</p>
                 </div>
               </div>
             </div>
@@ -524,7 +551,7 @@ export default function Home() {
           </div>
           <div className="faq-list">
             {[
-              { q: 'Resmi şube nasıl olunur?', a: 'Enter Sigorta resmi şubesi olmak için formumuzu doldurmanız yeterlidir. Uzman ekibimiz başvurunuzu değerlendirip sizinle iletişime geçecektir. Tüm yasal süreçlerde ve kurulum aşamasında yanınızdayız.' },
+              { q: 'Sigorta şubesi nasıl olunur?', a: 'Sigorta şubesi olmak için formumuzu doldurmanız yeterlidir. Uzman ekibimiz başvurunuzu değerlendirip sizinle iletişime geçecektir. Tüm yasal süreçlerde ve kurulum aşamasında yanınızdayız.' },
               { q: 'Zorunlu Trafik Sigortası nedir?', a: 'Trafiğe çıkan her aracın yaptırmak zorunda olduğu, karşı tarafa verilecek zararları karşılayan zorunlu sigorta türüdür.' },
               { q: 'Kasko ve Trafik Sigortası arasındaki fark nedir?', a: 'Trafik sigortası karşı tarafa verilen zararları karşılarken, kasko kendi aracınızdaki hasarları teminat altına alır. İkisi birbirini tamamlar.' },
               { q: 'Tamamlayıcı Sağlık Sigortası nedir?', a: 'SGK tarafından karşılanmayan veya kısmen karşılanan sağlık giderlerini teminat altına alır. Fark ücreti ödemeden özel hastanelerde tedavi olabilirsiniz.' },
@@ -643,20 +670,20 @@ export default function Home() {
             <div className="footer-col">
               <h4>Hızlı Linkler</h4>
               <ul>
-                <li><a href="#hizmetler">Sigorta Ürünleri</a></li>
+                <li><a href="/sigorta-urunleri">Sigorta Ürünleri</a></li>
                 <li><a href="#neden-biz">Neden Biz</a></li>
-                <li><a href="#sube-basvurusu">Resmi Şube Başvurusu</a></li>
+                <li><a href="/sigorta-sube-basvurusu">Sigorta Şubesi Başvurusu</a></li>
                 <li><a href="#sss">SSS</a></li>
-                <li><a href="#iletisim">İletişim</a></li>
+                <li><a href="/iletisim">İletişim</a></li>
               </ul>
             </div>
             <div className="footer-col">
               <h4>Ürünlerimiz</h4>
               <ul>
-                <li><a href="#hizmetler">Araç Sigortaları</a></li>
-                <li><a href="#hizmetler">Sağlık Sigortaları</a></li>
-                <li><a href="#hizmetler">Konut Sigortaları</a></li>
-                <li><a href="#hizmetler">İşyeri Sigortaları</a></li>
+                <li><a href="/sigorta-urunleri#arac">Araç Sigortaları</a></li>
+                <li><a href="/sigorta-urunleri#saglik">Sağlık Sigortaları</a></li>
+                <li><a href="/sigorta-urunleri#ev">Konut Sigortaları</a></li>
+                <li><a href="/sigorta-urunleri#arac">Kasko & Trafik</a></li>
               </ul>
             </div>
             <div className="footer-col">
