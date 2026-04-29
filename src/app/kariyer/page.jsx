@@ -47,11 +47,13 @@ export default function KariyerPage() {
           </Link>
           <ul className="nav-links">
             <li><Link href="/" className="nav-link">Ana Sayfa</Link></li>
-            <li><Link href="/#hizmetler" className="nav-link">Hizmetler</Link></li>
+            <li><Link href="/sigorta-sube-basvurusu" className="nav-link">Şube Başvurusu</Link></li>
+            <li><Link href="/sigorta-teklif-al" className="nav-link">Teklif Al</Link></li>
+            <li><Link href="/sigorta-urunleri" className="nav-link">Ürünler</Link></li>
             <li><Link href="/kariyer" className="nav-link active">Kariyer</Link></li>
-            <li><Link href="/#iletisim" className="nav-link">İletişim</Link></li>
+            <li><Link href="/iletisim" className="nav-link">İletişim</Link></li>
           </ul>
-          <Link href="/#sube-basvurusu" className="nav-cta">Resmi Şube Başvurusu</Link>
+          <Link href="/sigorta-teklif-al" className="nav-cta">Hemen Teklif</Link>
         </div>
       </nav>
 
@@ -64,7 +66,7 @@ export default function KariyerPage() {
       <section className="jobs-section">
         {loading ? (
           <div style={{ textAlign: 'center', padding: '60px', color: '#64748b' }}>
-            <div className="preloader-spinner" style={{ margin: '0 auto 16px', width: '30px', height: '30px', border: '3px solid rgba(255,255,255,0.1)', borderTopColor: '#8b5cf6', borderRadius: '50%', animation: 'spin 1s linear infinite' }}></div>
+            <div className="preloader-spinner" style={{ margin: '0 auto 16px', width: '30px', height: '30px', border: '3px solid rgba(255,255,255,0.1)', borderTopColor: 'var(--accent-red)', borderRadius: '50%', animation: 'spin 1s linear infinite' }}></div>
             Yükleniyor...
           </div>
         ) : jobs.length === 0 ? (

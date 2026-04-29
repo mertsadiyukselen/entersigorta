@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', subject: 'sube', city: '', experience: '', segem: '', currentJob: '', education: '', message: '' });
   const [statusMsg, setStatusMsg] = useState('');
   const [scrolled, setScrolled] = useState(false);
@@ -63,6 +64,17 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+        setOpenDropdown(null);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatusMsg('Gönderiliyor...');
@@ -121,15 +133,57 @@ export default function Home() {
           </a>
           <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
             <li><a href="#hero" className="nav-link active" onClick={() => setIsMenuOpen(false)}>Ana Sayfa</a></li>
-            <li><a href="#hizmetler" className="nav-link" onClick={() => setIsMenuOpen(false)}>Hizmetler</a></li>
-            <li><a href="#neden-biz" className="nav-link" onClick={() => setIsMenuOpen(false)}>Neden Biz</a></li>
-            <li><a href="#sss" className="nav-link" onClick={() => setIsMenuOpen(false)}>SSS</a></li>
+            <li><a href="/sigorta-sube-basvurusu" className="nav-link" onClick={() => setIsMenuOpen(false)}>Sigorta Şube Başvurusu</a></li>
+            <li><a href="/sigorta-teklif-al" className="nav-link" onClick={() => setIsMenuOpen(false)}>Sigorta Teklif Al</a></li>
+            <li
+              className={`nav-dropdown ${openDropdown === 'urunler' ? 'open' : ''}`}
+              onMouseEnter={() => setOpenDropdown('urunler')}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button
+                type="button"
+                className="nav-link nav-link-button"
+                aria-haspopup="menu"
+                aria-expanded={openDropdown === 'urunler'}
+                onClick={() => setOpenDropdown(openDropdown === 'urunler' ? null : 'urunler')}
+              >
+                Sigorta Ürünleri
+                <svg className="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9l6 6 6-6" /></svg>
+              </button>
+              <div className="dropdown-panel" role="menu" aria-label="Sigorta Ürünleri">
+                <div className="dropdown-grid">
+                  <div className="dropdown-col">
+                    <div className="dropdown-title">Aracımız İçin</div>
+                    <a className="dropdown-link" href="/sigorta-urunleri#arac" onClick={() => { setIsMenuOpen(false); setOpenDropdown(null); }}>Kasko Sigortası</a>
+                    <a className="dropdown-link" href="/sigorta-urunleri#arac" onClick={() => { setIsMenuOpen(false); setOpenDropdown(null); }}>Trafik Sigortası</a>
+                    <a className="dropdown-link" href="/sigorta-urunleri#arac" onClick={() => { setIsMenuOpen(false); setOpenDropdown(null); }}>Motosiklet Sigortası</a>
+                  </div>
+                  <div className="dropdown-col">
+                    <div className="dropdown-title">Sağlığımız İçin</div>
+                    <a className="dropdown-link" href="/sigorta-urunleri#saglik" onClick={() => { setIsMenuOpen(false); setOpenDropdown(null); }}>Tamamlayıcı Sağlık</a>
+                    <a className="dropdown-link" href="/sigorta-urunleri#saglik" onClick={() => { setIsMenuOpen(false); setOpenDropdown(null); }}>Bireysel Emeklilik</a>
+                    <a className="dropdown-link" href="/sigorta-urunleri#saglik" onClick={() => { setIsMenuOpen(false); setOpenDropdown(null); }}>Seyahat Sağlık</a>
+                  </div>
+                  <div className="dropdown-col">
+                    <div className="dropdown-title">Evimiz İçin</div>
+                    <a className="dropdown-link" href="/sigorta-urunleri#ev" onClick={() => { setIsMenuOpen(false); setOpenDropdown(null); }}>DASK</a>
+                    <a className="dropdown-link" href="/sigorta-urunleri#ev" onClick={() => { setIsMenuOpen(false); setOpenDropdown(null); }}>Konut Sigortası</a>
+                  </div>
+                  <div className="dropdown-col">
+                    <div className="dropdown-title">Ailemiz İçin</div>
+                    <a className="dropdown-link" href="/sigorta-urunleri#aile" onClick={() => { setIsMenuOpen(false); setOpenDropdown(null); }}>Hayat Sigortası</a>
+                    <a className="dropdown-link" href="/sigorta-urunleri#aile" onClick={() => { setIsMenuOpen(false); setOpenDropdown(null); }}>Ferdi Kaza</a>
+                  </div>
+                </div>
+              </div>
+            </li>
             <li><a href="/kariyer" className="nav-link" onClick={() => setIsMenuOpen(false)}>Kariyer</a></li>
-            <li><a href="#iletisim" className="nav-link" onClick={() => setIsMenuOpen(false)}>İletişim</a></li>
+            <li><a href="/sigorta-rehberi" className="nav-link" onClick={() => setIsMenuOpen(false)}>Sigorta Rehberi</a></li>
+            <li><a href="/iletisim" className="nav-link" onClick={() => setIsMenuOpen(false)}>İletişim</a></li>
           </ul>
-          <a href="#sube-basvurusu" className="nav-cta">
+          <a href="/sigorta-teklif-al" className="nav-cta">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
-            Resmi Şube Başvurusu
+            Hemen Teklif Alın
           </a>
           <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Menüyü aç">
             <span></span><span></span><span></span>
@@ -162,28 +216,54 @@ export default function Home() {
           <div className="hero-orb hero-orb-3"></div>
         </div>
         <div className="hero-content reveal">
-          <span className="hero-badge">🏢 Türkiye'nin Her Yerinde Resmi Şube Ağı</span>
-          <h1>Sigorta Sektöründe<br/><span className="gradient-text">Kendi İşinizi Kurun</span></h1>
-          <p className="hero-subtitle">Enter Sigorta'nın resmi şubesi olarak güçlü altyapımız, 30+ sigorta şirketi ağımız ve profesyonel desteğimizle kendi işinizi kurun. Tüm sigorta branşlarında yetkili şube olmanın ayrıcalığını yaşayın.</p>
+          <span className="hero-badge">Türkiye'nin En Büyük Acentesiyle</span>
+          <h1>Sigortacılığa Başlamanın<br/><span className="gradient-text">Tam Zamanı</span></h1>
+          <p className="hero-subtitle">Şube başvurusu, teklif alma ve ürünlerde avantajlı fiyatlarla hızlı çözümler. Her zaman yanınızdayız.</p>
           <div className="hero-actions">
             <a href="#sube-basvurusu" className="btn btn-primary btn-lg">
-              <span>Resmi Şube Başvurusu Yap</span>
+              <span>Hemen Başvurun</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="#hizmetler" className="btn btn-secondary">Sigorta Ürünlerimiz</a>
+            <a href="#teklif" className="btn btn-secondary">Teklif Alın</a>
+          </div>
+          <div className="hero-quickcards">
+            <a className="quickcard" href="#sube-basvurusu">
+              <div className="quickcard-icon">🏢</div>
+              <div className="quickcard-body">
+                <div className="quickcard-title">Sigorta Şube Başvurusu</div>
+                <div className="quickcard-text">Kendi işinizi kurmak için hemen başvurun.</div>
+              </div>
+              <div className="quickcard-cta">Form Doldur →</div>
+            </a>
+            <a className="quickcard" href="#teklif">
+              <div className="quickcard-icon">🧾</div>
+              <div className="quickcard-body">
+                <div className="quickcard-title">Sigorta Teklif Al</div>
+                <div className="quickcard-text">Avantajlı fiyatlarla poliçeni seç.</div>
+              </div>
+              <div className="quickcard-cta">Hemen Teklif →</div>
+            </a>
+            <a className="quickcard" href="/kariyer">
+              <div className="quickcard-icon">🧑‍💼</div>
+              <div className="quickcard-body">
+                <div className="quickcard-title">Kariyer</div>
+                <div className="quickcard-text">Takım arkadaşımız olun.</div>
+              </div>
+              <div className="quickcard-cta">Başvur →</div>
+            </a>
           </div>
           <div className="hero-stats">
             <div className="stat-item">
-              <span className="stat-number" data-target="1500">0</span>+
-              <span className="stat-label">Mutlu Müşteri</span>
+              <span className="stat-number" data-target="36">0</span>
+              <span className="stat-label">Güçlü Sigorta Şirketi</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number" data-target="30">0</span>+
-              <span className="stat-label">Sigorta Şirketi</span>
+              <span className="stat-number" data-target="81">0</span>
+              <span className="stat-label">Şehirdeyiz</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number" data-target="50">0</span>+
-              <span className="stat-label">Resmi Şube</span>
+              <span className="stat-number" data-target="500">0</span>+
+              <span className="stat-label">Sigorta Şubesi</span>
             </div>
           </div>
         </div>
@@ -336,44 +416,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HİZMETLER */}
-      <section className="services" id="hizmetler">
+      {/* TEKLİF AL */}
+      <section className="services" id="teklif">
+        <div className="container">
+          <div className="section-header reveal">
+            <span className="section-tag">En Doğru Sigortaya Ulaşın</span>
+            <h2>Teklif Alın</h2>
+            <p>Avantajlı fiyatlarla sigortanızı yaptırmak için hemen teklif alın.</p>
+          </div>
+          <div className="mini-offer reveal" style={{ '--delay': '0.15s' }}>
+            <div className="mini-offer-left">
+              <div className="mini-offer-title">Tüm Sigorta Ürünlerinde En Uygun Fiyat Fırsatı</div>
+              <div className="mini-offer-text">Kısa bilgi bırakın, ekibimiz en uygun seçenekleri sizin için hazırlasın.</div>
+            </div>
+            <div className="mini-offer-actions">
+              <a className="btn btn-primary" href={`https://wa.me/${whatsappNumber}`} target="_blank">WhatsApp’tan Teklif</a>
+              <a className="btn btn-secondary" href="#urunler">Ürünlere Git</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ÜRÜNLER */}
+      <section className="services" id="urunler">
         <div className="container">
           <div className="section-header reveal">
             <span className="section-tag">Sigorta Ürünleri</span>
-            <h2>Kapsamlı Sigorta Çözümleri</h2>
-            <p>Tüm branşlarda en uygun fiyatlarla güçlü teminatlar sunuyoruz.</p>
+            <h2>Popüler Ürünler</h2>
+            <p>Konut, sağlık ve araç sigortalarında hızlı teklif.</p>
           </div>
           <div className="services-grid">
             <div className="service-card reveal" style={{ '--delay': '0.1s' }}>
-              <div className="service-icon" style={{ fontSize: '2rem' }}>🚗</div>
-              <h3>Araç Sigortaları</h3>
-              <p>Kasko, Trafik, Motosiklet Sigortası. Yola güvenle çıkın.</p>
-              <a href="#sube-basvurusu" className="service-link">Teklif Al →</a>
+              <div className="service-icon" style={{ fontSize: '2rem' }}>🏠</div>
+              <h3>Konut Sigortası</h3>
+              <p>Evinizi, eşyalarınızı ve sorumluluklarınızı güvenceye alın.</p>
+              <a href="#teklif" className="service-link">Teklif Al →</a>
             </div>
             <div className="service-card reveal" style={{ '--delay': '0.2s' }}>
               <div className="service-icon" style={{ fontSize: '2rem' }}>🏥</div>
-              <h3>Sağlık Sigortaları</h3>
-              <p>Tamamlayıcı, Özel Sağlık ve Seyahat Sağlık Sigortası.</p>
-              <a href="#sube-basvurusu" className="service-link">Teklif Al →</a>
+              <h3>Sağlık Sigortası</h3>
+              <p>Özel hastanede tedavi; uygun primlerle hızlı çözüm.</p>
+              <a href="#teklif" className="service-link">Teklif Al →</a>
             </div>
             <div className="service-card reveal" style={{ '--delay': '0.3s' }}>
-              <div className="service-icon" style={{ fontSize: '2rem' }}>🏠</div>
-              <h3>Konut Sigortaları</h3>
-              <p>DASK ve Konut Sigortası ile evinizi güvence altına alın.</p>
-              <a href="#sube-basvurusu" className="service-link">Teklif Al →</a>
+              <div className="service-icon" style={{ fontSize: '2rem' }}>🚗</div>
+              <h3>Trafik Sigortası</h3>
+              <p>Zorunlu trafik sigortasında en uygun seçenekleri karşılaştırın.</p>
+              <a href="#teklif" className="service-link">Teklif Al →</a>
             </div>
             <div className="service-card reveal" style={{ '--delay': '0.4s' }}>
-              <div className="service-icon" style={{ fontSize: '2rem' }}>🏢</div>
-              <h3>İşyeri Sigortaları</h3>
-              <p>Kurumsal poliçelerle işletmenizi koruyun.</p>
-              <a href="#sube-basvurusu" className="service-link">Teklif Al →</a>
-            </div>
-            <div className="service-card reveal" style={{ '--delay': '0.5s' }}>
-              <div className="service-icon" style={{ fontSize: '2rem' }}>👨‍👩‍👧‍👦</div>
-              <h3>Aile & Bireysel</h3>
-              <p>Bireysel Emeklilik, Hayat ve Ferdi Kaza Sigortası.</p>
-              <a href="#sube-basvurusu" className="service-link">Teklif Al →</a>
+              <div className="service-icon" style={{ fontSize: '2rem' }}>🛡️</div>
+              <h3>Kasko Sigortası</h3>
+              <p>Çarpma, hırsızlık, sel gibi risklerde kaskonuz yanınızda.</p>
+              <a href="#teklif" className="service-link">Teklif Al →</a>
             </div>
           </div>
         </div>
@@ -630,7 +725,7 @@ function CookieBanner() {
   }, []);
   if (!show) return null;
   return (
-    <div className="cookie-banner" style={{ opacity: 1, transform: 'translateY(0)' }}>
+    <div className="cookie-banner show">
       <div className="cookie-content">
         <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-red)" strokeWidth="2"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/></svg>
         <p>Çerez (cookie) kullanıyoruz. Devam etmeniz <strong>Çerez Politikamızı</strong> kabul ettiğiniz anlamına gelir.</p>

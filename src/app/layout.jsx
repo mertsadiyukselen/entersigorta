@@ -2,8 +2,8 @@ import './globals.css';
 
 export async function generateMetadata() {
   // Varsayılan değerler
-  let title = "Enter Sigorta — Sigortacılık Yeniden Yazılıyor";
-  let description = "Trafik, kasko, ev, sağlık ve işyeri sigortası çözümleri ile 7/24 kesintisiz hizmet. En uygun fiyat garantisiyle güvenilir sigorta partneriniz.";
+  let title = "Timurlar Sigorta — Türkiye'nin En Büyük Sigorta Acentesi";
+  let description = "Sigorta şubesi başvurusu, sigorta teklif alma ve tüm sigorta ürünlerinde avantajlı fiyatlarla hızlı çözüm. Her zaman yanınızdayız.";
   
   try {
     const { PrismaClient } = await import('@prisma/client');
