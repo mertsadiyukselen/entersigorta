@@ -345,8 +345,8 @@ export default function Home() {
                 <div className="partner-glass-card pc-2 reveal" style={{ '--delay': '0.3s' }}>
                   <div className="pc-icon">📈</div>
                   <div>
-                    <h4>Yüksek Kazanç</h4>
-                    <p>Bölgenizin lideri siz olun</p>
+                    <h4>Operasyon Desteği</h4>
+                    <p>Kurulumdan satışa her adımda yanınızdayız</p>
                   </div>
                 </div>
               </div>
