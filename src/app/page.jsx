@@ -332,7 +332,6 @@ export default function Home() {
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-red)" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg> Doğrudan Yetkili Acente Statüsü</li>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg> 30+ Sigorta Şirketi Ağı</li>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg> Prestijli Kurumsal Tabela & Kurulum Desteği</li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg> Yüksek Komisyon Oranları</li>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg> Özel Hasar & Teknik Destek Ekibi</li>
               </ul>
               <div className="partner-graphics" style={{ marginTop: '30px' }}>
