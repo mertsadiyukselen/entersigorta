@@ -8,6 +8,11 @@ function normalizeHref(href) {
   return href.trim();
 }
 
+function getSlideHref(slide, kind) {
+  const raw = kind === 'primary' ? slide.primaryCtaHref : slide.secondaryCtaHref;
+  return normalizeHref(raw) || (kind === 'primary' ? '/sigorta-sube-basvurusu' : '/sigorta-teklif-al');
+}
+
 export default function HeroSlider({ fallbackSlide }) {
   const [banners, setBanners] = useState([]);
   const [idx, setIdx] = useState(0);
@@ -44,34 +49,50 @@ export default function HeroSlider({ fallbackSlide }) {
   }, [slides.length, idx]);
 
   if (!slides.length) return null;
-  const current = slides[idx];
-
-  const primaryHref = normalizeHref(current.primaryCtaHref) || '/sigorta-sube-basvurusu';
-  const secondaryHref = normalizeHref(current.secondaryCtaHref) || '/sigorta-teklif-al';
 
   return (
     <div className="hero-slider" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-      <div className="hero-slide">
-        <img className="hero-slide-bg" src={current.imageUrl} alt={current.title || 'Banner'} />
-        <div className="hero-slide-overlay" />
-        <div className="hero-slide-content">
-          {current.subtitle ? <span className="hero-badge">{current.subtitle}</span> : null}
-          <h1 className="hero-slide-title">
-            {current.title}
-          </h1>
-          {current.description ? <p className="hero-subtitle">{current.description}</p> : null}
-          <div className="hero-actions">
-            {current.primaryCtaText ? (
-              <Link href={primaryHref} className="btn btn-primary btn-lg">
-                <span>{current.primaryCtaText}</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
-            ) : null}
-            {current.secondaryCtaText ? <Link href={secondaryHref} className="btn btn-secondary">{current.secondaryCtaText}</Link> : null}
-          </div>
-        </div>
+      <div className="hero-track" style={{ transform: `translateX(${-idx * 100}%)` }}>
+        {slides.map((slide, i) => {
+          const primaryHref = getSlideHref(slide, 'primary');
+          const secondaryHref = getSlideHref(slide, 'secondary');
+
+          return (
+            <div className="hero-slide" key={slide.id ?? i} aria-hidden={i !== idx}>
+              <img className="hero-slide-bg" src={slide.imageUrl} alt={slide.title || 'Banner'} />
+              <div className="hero-slide-overlay" />
+              <div className="hero-slide-content">
+                {slide.subtitle ? <span className="hero-badge">{slide.subtitle}</span> : null}
+                <h1 className="hero-slide-title">{slide.title}</h1>
+                {slide.description ? <p className="hero-subtitle">{slide.description}</p> : null}
+                <div className="hero-actions">
+                  {slide.primaryCtaText ? (
+                    <Link href={primaryHref} className="btn btn-primary btn-lg">
+                      <span>{slide.primaryCtaText}</span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  ) : null}
+                  {slide.secondaryCtaText ? (
+                    <Link href={secondaryHref} className="btn btn-secondary">
+                      {slide.secondaryCtaText}
+                    </Link>
+                  ) : null}
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {slides.length > 1 ? (
