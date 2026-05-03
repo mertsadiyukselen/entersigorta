@@ -50,6 +50,21 @@ export default function KariyerPage() {
         <p>Sigorta sektörünün dinamik dünyasında yerinizi alın. Açık pozisyonlarımızı inceleyin ve ekibimize katılın.</p>
       </section>
 
+      <section className="container kariyer-rehber-banner" style={{ maxWidth: 900, marginTop: -32, marginBottom: 8 }}>
+        <div className="kariyer-rehber-inner">
+          <div>
+            <span className="kariyer-rehber-tag">Kariyer rehberi</span>
+            <h2 className="kariyer-rehber-title">Sektörü tanımadan başvuru mu?</h2>
+            <p className="kariyer-rehber-text">
+              Sigorta rehberimizde sektör, ürünler ve meslek yolu hakkında kısa yazıları okuyabilirsiniz—özellikle &quot;Sigorta acentesinde kariyer&quot; yazısı yeni başlayanlar için.
+            </p>
+          </div>
+          <Link href="/sigorta-rehberi" className="btn btn-secondary kariyer-rehber-btn">
+            Rehbere Git →
+          </Link>
+        </div>
+      </section>
+
       <section className="jobs-section">
         {loading ? (
           <div style={{ textAlign: 'center', padding: '60px', color: '#64748b' }}>

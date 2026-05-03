@@ -2,6 +2,11 @@
 import { useEffect, useState } from 'react';
 import HeroSlider from './components/HeroSlider';
 
+const DEFAULT_PARTNER_NAMES = [
+  'Allianz', 'Axa', 'Anadolu Sigorta', 'HDI', 'Mapfre', 'Sompo', 'Neova', 'Quick Sigorta',
+  'Türkiye Sigorta', 'Ray', 'Bereket', 'Zurich', 'Groupama', 'Türk Nippon',
+];
+
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -9,6 +14,7 @@ export default function Home() {
   const [statusMsg, setStatusMsg] = useState('');
   const [scrolled, setScrolled] = useState(false);
   const [settings, setSettings] = useState({});
+  const [partnerLogos, setPartnerLogos] = useState([]);
   
   useEffect(() => {
     // Fetch dynamic settings (WhatsApp, Instagram)
@@ -16,6 +22,12 @@ export default function Home() {
       .then(res => res.json())
       .then(data => setSettings(data))
       .catch(() => {});
+
+    // Fetch partner logos (admin managed)
+    fetch('/api/partner-logos')
+      .then((res) => res.json())
+      .then((data) => setPartnerLogos(Array.isArray(data) ? data : []))
+      .catch(() => setPartnerLogos([]));
 
     // Preloader
     const preloader = document.getElementById('preloader');
@@ -76,6 +88,13 @@ export default function Home() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatusMsg('Gönderiliyor...');
@@ -115,6 +134,25 @@ export default function Home() {
 
   const whatsappNumber = settings.whatsapp_number || '903124260110';
   const instagramHandle = settings.instagram_handle || 'entersigorta';
+
+  const partnerMarqueeItems = (() => {
+    if (partnerLogos.length > 0) {
+      return partnerLogos.map((p) => ({
+        key: `db-${p.id}`,
+        name: p.name,
+        imageUrl: p.imageUrl,
+        linkUrl: p.linkUrl || '',
+      }));
+    }
+    return DEFAULT_PARTNER_NAMES.map((name, i) => ({
+      key: `fallback-${i}-${name}`,
+      name,
+      imageUrl: '',
+      linkUrl: '',
+    }));
+  })();
+
+  const partnerMarqueeDuped = [...partnerMarqueeItems, ...partnerMarqueeItems];
 
   return (
     <>
@@ -194,7 +232,7 @@ export default function Home() {
 
       {/* TOP BAR - Telefon & Sosyal Medya */}
       <div className="top-bar">
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="container top-bar-inner">
           <a href={`tel:+${whatsappNumber}`} style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#ccc', fontSize: '0.85rem' }}>
             📞 {whatsappNumber.replace(/(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})/, '+$1 ($2) $3 $4 $5')}
           </a>
@@ -307,21 +345,37 @@ export default function Home() {
         </div>
         <div className="partners-marquee">
           <div className="marquee-track">
-            {[
-              'Allianz', 'Axa', 'Anadolu', 'HDI', 'Mapfre', 'Sompo', 'Neova', 'Quick',
-              'Türkiye Sigorta', 'Ray', 'Bereket', 'Zurich', 'Groupama', 'Türk Nippon', 'Hepiyi',
-              'Koru', 'Doğa', 'Güneş', 'Eureko', 'Dubai Starr',
-              'Allianz', 'Axa', 'Anadolu', 'HDI', 'Mapfre', 'Sompo', 'Neova', 'Quick',
-              'Türkiye Sigorta', 'Ray', 'Bereket', 'Zurich', 'Groupama', 'Türk Nippon', 'Hepiyi',
-              'Koru', 'Doğa', 'Güneş', 'Eureko', 'Dubai Starr',
-            ].map((name, i) => (
-              <div className="partner-logo reveal" style={{ '--delay': `${0.04 * (i % 8)}s` }} key={i}>
-                <div className="partner-mark" aria-hidden="true">
-                  {name.trim().slice(0, 2).toUpperCase()}
+            {partnerMarqueeDuped.map((row, i) => {
+              const cls = 'partner-logo reveal';
+              const style = { '--delay': `${0.04 * (i % 8)}s` };
+
+              const inner = (
+                <>
+                  <div className="partner-img" aria-hidden="true">
+                    {row.imageUrl ? (
+                      <img src={row.imageUrl} alt={row.name} loading="lazy" />
+                    ) : (
+                      <span className="partner-fallback-mark">{row.name.trim().slice(0, 2).toUpperCase()}</span>
+                    )}
+                  </div>
+                  <span className="partner-name">{row.name}</span>
+                </>
+              );
+
+              const keyId = `${row.key}::${i}`;
+
+              return row.linkUrl ? (
+                <a key={keyId} href={row.linkUrl} target="_blank" rel="noreferrer" className="marquee-partner-link">
+                  <div className={cls} style={style}>
+                    {inner}
+                  </div>
+                </a>
+              ) : (
+                <div key={keyId} className={cls} style={style}>
+                  {inner}
                 </div>
-                <span className="partner-name">{name}</span>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

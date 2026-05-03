@@ -194,6 +194,12 @@ export default async function AdminLayout({ children }) {
           <Link href="/admin/banners" className="admin-nav-link">
             🖼️ <span>Banner Slider</span>
           </Link>
+          <Link href="/admin/partner-logos" className="admin-nav-link">
+            🏷️ <span>Şirket Logoları</span>
+          </Link>
+          <Link href="/admin/guides" className="admin-nav-link">
+            📚 <span>Sigorta Rehberi</span>
+          </Link>
 
           <div className="admin-nav-section">Sistem</div>
           <Link href="/admin/settings" className="admin-nav-link">

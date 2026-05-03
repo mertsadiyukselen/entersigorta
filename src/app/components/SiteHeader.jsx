@@ -15,6 +15,7 @@ const navItems = [
 
 export default function SiteHeader({ activeKey = '' }) {
   const [settings, setSettings] = useState({});
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     fetch('/api/settings')
@@ -23,19 +24,31 @@ export default function SiteHeader({ activeKey = '' }) {
       .catch(() => {});
   }, []);
 
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   const whatsappNumber = settings.whatsapp_number || '903124260110';
 
   return (
     <nav className="navbar scrolled" style={{ top: 0 }}>
       <div className="nav-container">
-        <Link href="/" className="nav-logo" aria-label="Ana sayfa">
+        <Link href="/" className="nav-logo" aria-label="Ana sayfa" onClick={() => setIsMenuOpen(false)}>
           <img src="/enter_sigorta.png" alt="Logo" className="brand-logo" />
         </Link>
 
-        <ul className="nav-links" aria-label="Ana menü">
+        <ul id="site-header-nav" className={`nav-links ${isMenuOpen ? 'active' : ''}`} aria-label="Ana menü">
           {navItems.map((item) => (
             <li key={item.key}>
-              <Link href={item.href} className={`nav-link ${activeKey === item.key ? 'active' : ''}`}>
+              <Link
+                href={item.href}
+                className={`nav-link ${activeKey === item.key ? 'active' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {item.label}
               </Link>
             </li>
@@ -45,6 +58,19 @@ export default function SiteHeader({ activeKey = '' }) {
         <a href={`https://wa.me/${whatsappNumber}`} target="_blank" className="nav-cta" rel="noreferrer">
           WhatsApp
         </a>
+
+        <button
+          type="button"
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMenuOpen((o) => !o)}
+          aria-expanded={isMenuOpen}
+          aria-controls="site-header-nav"
+          aria-label={isMenuOpen ? 'Menüyü kapat' : 'Menüyü aç'}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
     </nav>
   );

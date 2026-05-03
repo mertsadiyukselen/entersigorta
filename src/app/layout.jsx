@@ -1,5 +1,12 @@
 import './globals.css';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: '#050505',
+};
+
 export async function generateMetadata() {
   // Varsayılan değerler
   let title = "Timurlar Sigorta — Türkiye'nin En Büyük Sigorta Acentesi";
@@ -31,7 +38,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="tr">
       <head>
-        <meta name="theme-color" content="#0a0e1a" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />

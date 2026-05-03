@@ -4,3 +4,5 @@ node_modules
 /generated/prisma
 prisma/dev.db
 prisma/dev.db-journal
+public/uploads/partners/*
+!public/uploads/partners/.gitkeep
